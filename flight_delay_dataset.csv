@@ -1,0 +1,11 @@
+departure_hour,route_distance_km,weather_score,wind_speed,destination_traffic,weekend,delay
+6,500,8,5,2,0,No
+9,800,6,10,3,0,No
+12,1200,5,15,5,0,Yes
+15,1500,4,12,8,0,Yes
+18,700,6,18,9,0,No
+20,900,5,20,3,1,Yes
+22,1100,4,25,6,1,Yes
+7,600,7,28,7,1,No
+10,1000,6,10,9,0,No
+19,1300,4,6,8,0,Yes

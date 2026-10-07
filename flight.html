@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Prediction - SkyPredict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Flight Analysis</h2>
+            <form action="/api/add-flight" method="post">
+                <div class="form-group">
+                    <label>Flight Number</label>
+                    <input type="text" name="flight_number" placeholder="e.g. AA123" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Departure City</label>
+                    <input type="text" name="departure_city" placeholder="e.g. New York" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Arrival City</label>
+                    <input type="text" name="arrival_city" placeholder="e.g. London" required>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+                <h3 style="text-align:center; color: #fff; margin-bottom: 20px; font-size: 18px;">Prediction Parameters
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Distance (Mi)</label>
+                        <input type="number" name="route_distance" value="500" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Weather Impact (1-10)</label>
+                        <input type="number" name="weather_score" value="5" min="1" max="10" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Departure Hour (0-23)</label>
+                        <input type="number" name="departure_hour" value="10" min="0" max="23" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Wind Speed (km/h)</label>
+                        <input type="number" name="wind_speed" value="15" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Dest. Traffic (1-10)</label>
+                        <input type="number" name="destination_traffic" value="5" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Weekend? (0=No, 1=Yes)</label>
+                        <select name="weekend">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-block">Analyze Flight</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
